@@ -6,9 +6,11 @@
 **Academic Year:** 2026–2027
 
 ## Overview
+
 This project forecasts transformer oil temperature (ETTh1 target column `OT`) from seven time-series variables. It compares a baseline LSTM, a bidirectional LSTM with additive attention, and a Transformer encoder.
 
 ## Forecast setup
+
 - Historical input window: 96 hourly steps
 - Forecast horizon: 24 hourly steps
 - Features: HUFL, HULL, MUFL, MULL, LUFL, LULL, OT
@@ -16,6 +18,7 @@ This project forecasts transformer oil temperature (ETTh1 target column `OT`) fr
 - Scaling: StandardScaler fitted on training data only
 
 ## Recorded evaluation results
+
 | Model | MSE | MAE | RMSE |
 |---|---:|---:|---:|
 | Baseline LSTM | 3.4520 | 1.4252 | 1.8580 |
@@ -25,18 +28,25 @@ This project forecasts transformer oil temperature (ETTh1 target column `OT`) fr
 These are the recorded results supplied with the project; they have not been independently rerun during repository publication.
 
 ## Repository contents
-- `notebooks/`: original experiment notebook (to be added from the supplied project archive)
+
+- `Enhanced_LSTM_Time_Series_Forecasting.ipynb`: original experiment notebook
+- `ETTh1.csv`: dataset file
+- `Enhanced_LSTM_Project_Results.pdf`: project results
+- `N_Enhanced_LSTM_IEEE_Research_Paper.pdf`: research paper
 - `src/`: reusable model definitions and training utilities
-- `data/`: place the ETTh1 CSV here; large raw datasets are not committed
-- `reports/`: project report and research paper
-- `presentation/`: project presentation
+- `results/`: recorded model comparison metrics
 
-## Dataset
-Use the ETTh1 dataset from the official ETDataset repository: https://github.com/zhouhaoyi/ETDataset  
-Place `ETTh1.csv` at `data/ETTh1.csv`.
+## Run the notebook
 
-## Run
+Open `Enhanced_LSTM_Time_Series_Forecasting.ipynb` in Google Colab and choose **Runtime → Run all**. The notebook downloads the ETTh1 dataset itself.
+
+## Run the Python script
+
+Install the dependencies and pass the CSV included in this repository:
+
 ```bash
 pip install -r requirements.txt
-python src/train.py --data data/ETTh1.csv
+python src/train.py --data ETTh1.csv
 ```
+
+The ETTh1 dataset originates from the [official ETDataset repository](https://github.com/zhouhaoyi/ETDataset).
