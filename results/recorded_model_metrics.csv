@@ -1,0 +1,4 @@
+Model,MSE,MAE,RMSE
+Baseline LSTM,3.4520,1.4252,1.8580
+Improved LSTM + Attention,3.7545,1.4979,1.9376
+Transformer,3.7411,1.5190,1.9342
